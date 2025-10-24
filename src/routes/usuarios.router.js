@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { register, login } from '../controladores/usuariosctrl.js';
+import { register, login } from '../controladores/usuariosCtrl.js';
 import { verificarToken } from '../middleware/usuarios.js';
 
 const router = Router();
