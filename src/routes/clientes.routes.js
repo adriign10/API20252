@@ -5,7 +5,7 @@ import { verificarToken } from '../middleware/usuarios.js'; // <- nombre correct
 const router = Router();
 
 router.get('/prueba', verificarToken, prueba);
-
+router.get('/clientes2', getClientes);
 router.get('/clientes', verificarToken, getClientes);
 router.get('/clientes/:id', verificarToken, getClientesxId);
 router.post('/clientes', verificarToken, posCliente);
