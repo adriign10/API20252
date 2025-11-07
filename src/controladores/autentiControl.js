@@ -9,6 +9,7 @@ export const login = async (req, res) => {
   console.log('[LOGIN] body:', req.body);
 
   try {
+    const { usr_usuario, usr_clave } = req.body;
     // Buscar usuario en la base de datos
     const [rows] = await conmysql.query(
       'SELECT * FROM usuarios WHERE usr_usuario = ?',
@@ -50,7 +51,10 @@ export const login = async (req, res) => {
     });
 
   } catch (error) {
-    console.error('🔴 Error en login:', error);
-    res.status(500).json({ estado: 0, mensaje: 'Error interno del servidor' });
+    console.log('🔴 Error en login:', error);
+    res.status(500).json({
+      estado: 0,
+      mensaje: 'Error interno del servidor'
+    });
   }
 };
