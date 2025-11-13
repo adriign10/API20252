@@ -152,7 +152,11 @@ export const postPedido = async (req, res) => {
         }
 
         await connection.commit();
-        res.status(201).json({ message: "Pedido registrado correctamente", ped_id });
+res.status(201).json({
+  success: true,
+  message: "Pedido registrado correctamente",
+  ped_id
+});
     } catch (error) {
         await connection.rollback();
         console.error("Error al registrar el pedido:", error);
