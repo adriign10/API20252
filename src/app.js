@@ -1,4 +1,4 @@
-/*import express from 'express'
+import express from 'express'
 import cors from 'cors'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -28,7 +28,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Manejo del preflight OPTIONS
-app.options('*', cors(corsOptions));
+//app.options('*', cors(corsOptions));
 
 
 // ✅ Esta línea no la necesitas si usas Cloudinary
@@ -39,7 +39,6 @@ app.use('/api', prodRouters)
 app.use('/api/autenti', autentiRouters)
 app.use('/api', usuRouters)
 app.use('/api', pedidosRoutes)
-app.use('/api', clientesRoutes);
 app.use('/api', categoriasRoutes);
 
 
@@ -56,4 +55,3 @@ app.use((req, resp) => {
 })
 
 export default app
-*/
